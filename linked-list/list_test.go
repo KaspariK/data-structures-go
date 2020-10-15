@@ -1,4 +1,4 @@
-package main
+package list
 
 import (
 	"fmt"
@@ -18,8 +18,8 @@ func TestAppend(t *testing.T) {
 
 	for name, tc := range tests {
 		fmt.Println(tc)
-		for i := range tc.items {
-			ll.Append(i)
+		for _, item := range tc.items {
+			ll.Append(item)
 		}
 
 		got := ll.Contents()

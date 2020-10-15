@@ -1,5 +1,5 @@
 // A singly linked list
-package main
+package list
 
 // TODO: convert to doubly linked list
 
@@ -72,9 +72,9 @@ func (ll *LinkedList) Contents() []interface{} {
 	}
 
 	contents := make([]interface{}, ll.len)
-	n := ll.head
-	for n != nil {
-		contents = append(contents, n.val)
+	for i, n := 0, ll.head; n != nil; i++{
+		contents[i] = n.val
+
 		n = n.next
 	}
 
